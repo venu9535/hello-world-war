@@ -1,10 +1,18 @@
 pipeline {
-    agent any
+    agent { label 'venu123' }
     stages {
-        stage('clone git repo') {
+        stage('clone step') {
             steps {
-                sh ''
+                sh 'https://github.com/venu9535/hello-world-war.git'
+                
             }
         }
+  stage('build step') {
+            steps {
+                sh 'mvn package'
+                
+            }
+        } 
+    
     }
 }
