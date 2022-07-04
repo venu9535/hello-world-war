@@ -1,19 +1,17 @@
 pipeline {
-    agent any
+    agent { label 'java' }
     stages {
         stage('clone step') {
             steps {
                 sh 'rm -rf hello-world-war'
-                sh 'https://github.com/venu9535/hello-world-war.git'
-                
+                sh ' git clone https://github.com/sudarshan1912/hello-world-war.git'
             }
         }
-  stage('build step') {
+      stage('build step') {
             steps {
                 sh 'mvn package'
-                
             }
-        } 
-    
-    }
-}
+        }
+       stage('deploy step') {
+            steps {
+              sh 'sudo cp /home/slave1/workspace/Hello_WorldWar_Job/target/hello-world-war-
