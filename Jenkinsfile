@@ -12,6 +12,4 @@ pipeline {
                 sh 'mvn package'
             }
         }
-       stage('deploy step') {
-            steps {
-              sh 'sudo cp /home/slave1/workspace/Hello_WorldWar_Job/target/hello-world-war-
+      
