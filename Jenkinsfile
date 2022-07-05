@@ -1,18 +1,31 @@
 pipeline {
     agent { label 'java' }
     stages {
-        stage('clone step') {
+        stage ('setting parameters to the job') 
+        {
             steps {
-                sh 'rm -rf hello-world-war'
-                sh 'git clone https://github.com/venu9535/hello-world-war.git'
+                script {
+                    properties([ 
+                        parameters([ 
+                            choice( 
+                                choices: ['testing', 'development'],
+                                name :'environments'
+                            )
+                        ])
+                    ])
+                }
             }
-        }
       stage('build step') {
             steps {
                 sh 'mvn package'
             }
         }
-  
-    }
+  stage('deploy step') {
+            steps {
+                sh 'sudo cp /home/venu1/workspace/testing/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.64/webapps'
+            }
+        }
+   
+        }
 }
       
