@@ -1,4 +1,3 @@
-properties([ parameters([ choice( choices: ['ONE', 'TWO'], name: "")])])
 pipeline {
     agent { label 'java' }
     stages {
@@ -13,12 +12,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-   stage('deploy step') {
-            steps {
-                sh 'sudo mv /home/venu1/workspace/helloworld2/target/hello-world-war-1.0.0.war /home/venu1/workspace/helloworld2/target/parameter_pipeline.war
-                sh 'sudo cp /home/venu1/workspace/helloworld2/target/parameter_pipeline.war.war /opt/apache-tomcat-9.0.64/webapps'
-            }
-        }
+   
     }
 }
       
