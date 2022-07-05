@@ -14,6 +14,7 @@ pipeline {
                         ])
                     ])
                 }
+                }
             }
       stage('build step') {
             steps {
