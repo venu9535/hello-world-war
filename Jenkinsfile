@@ -28,7 +28,7 @@ pipeline {
         }
        stage('deploy step') {
             steps {
-              sh 'sudo cp /home/venu1/workspace/testing/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.64/webapps'
+              sh 'sudo cp /home/venu1/workspace/parameters/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.64/webapps'
             }
         }
     }
