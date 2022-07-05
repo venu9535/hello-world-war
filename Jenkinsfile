@@ -1,4 +1,3 @@
-properties([ parameters([ choice( choices: ['ONE', 'TWO'], name: "")])])
 pipeline {
     agent { label 'java' }
     stages {
