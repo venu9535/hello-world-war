@@ -1,8 +1,7 @@
 pipeline {
     agent { label 'java' }
     stages {
-        stage ('setting parameters to the job') 
-        {
+        stage('setting parameters to the job') {
             steps {
                 script {
                     properties([ 
@@ -14,8 +13,8 @@ pipeline {
                         ])
                     ])
                 }
-                }
-            }
+				}
+				}
       stage('build step') {
             steps {
                 sh 'mvn package'
